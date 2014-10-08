@@ -2,7 +2,7 @@
   "name": "DateRangePickerDive",
   "description": "Fully customized date range picker with angular model",
   "authors": [
-  "ClearCode (http://clearcode.cc)",
+  "ClearCode (http://clearcode.cc)"
 ],
   "version": "1.0.0",
   "main": "DateRangePickerDive.js",
