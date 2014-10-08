@@ -1,0 +1,204 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+// bower:scss
+// endbower
+.calendar-table {
+  display: table;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  font-size: 14px;
+  line-height: 20px;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.calendar-table .head .th,
+.calendar-table .head .td {
+  font-weight: bold;
+  border-bottom: 1px solid #dfdfdf;
+}
+.calendar-table .date {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.calendar-table .date.disable {
+  color: #999;
+}
+.calendar-table .block {
+  display: block;
+}
+.calendar-table .tr {
+  display: table-row;
+}
+.calendar-table .tr .td {
+  display: table-cell;
+  padding: 10px;
+  width: 14.5%;
+  border: 1px solid #dfdfdf;
+  height: 100px;
+  background-color: #fff;
+}
+.calendar-table .tr .td .add_post {
+  display: none;
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+.calendar-table .tr .td:hover {
+  background: #e9ebeb;
+}
+.calendar-table .tr .td:hover .add_post {
+  display: inline;
+}
+.calendar-table .tr .td .media {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.calendar-table .tr .td.current {
+  background: #e9ebeb;
+}
+.calendar-table .tr .td a {
+  font-size: 12px;
+  line-height: 18px;
+}
+.calendar-table .tr .th {
+  display: table-cell;
+  padding: 10px;
+}
+.timepicker {
+  display: inline-block;
+  vertical-align: middle;
+}
+.timepicker input {
+  padding: 0;
+  margin: 0;
+  border-radius: none;
+  box-shadow: none;
+  border: 2px inset white;
+  width: 2em;
+}
+.timepicker td {
+  margin: 0;
+  text-align: center;
+  width: auto !important;
+  padding: 0 3px;
+}
+.timepicker td .btn-link {
+  border: none;
+  padding: 0;
+}
+.timepicker td .btn-link:hover,
+.timepicker td .btn-link:focus {
+  border: none !important;
+  background: transparent  !important;
+  padding: 0;
+}
+.pointer {
+  cursor: pointer;
+}
+.timepicker td {
+  margin: 0;
+  text-align: center;
+  width: auto !important;
+  padding: 0 3px;
+}
+.timepicker input {
+  padding: 0;
+  margin: 0;
+  border-radius: none;
+  box-shadow: none;
+  border: 2px inset white;
+  width: 2em;
+}
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

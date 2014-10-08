@@ -1,0 +1,14 @@
+<div class="box" ng-class="{'loading': isLoading }">
+    <div class="wrapper-loading">
+        <img src="images/loading-balls.svg" alt="Loading icon"/>
+    </div>
+    <header ng-hide="title === undefined">
+        <h3 class="title hovered">
+            {{ title }}
+            <a href ng-click="onInfo()" class="ng-hide helper-icon" ng-show="info"> <i class="icon-help"></i></a>
+            &nbsp;
+        </h3>
+    </header>
+    <section ng-class="{'content': isFluid === undefined }" ng-transclude>
+    </section>
+</div>

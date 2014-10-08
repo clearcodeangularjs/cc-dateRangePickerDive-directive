@@ -1,0 +1,30 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                <button id="yearPrev" type="button" class="btn btn-default btn-sm pull-left" ng-click="selectYear(-1)">
+                    <i class="glyphicon glyphicon-chevron-left"><<</i>
+                </button>
+            </th>
+            <th>
+                <button type="button" class="btn btn-default btn-sm btn-block">
+                    <strong class="ng-binding">{{ calendarDate | date:'yyyy'}}</strong>
+                </button>
+            </th>
+            <th>
+                <button id="yearNext" type="button" class="btn btn-default btn-sm pull-right" ng-click="selectYear(1)">
+                    <i class="glyphicon glyphicon-chevron-right">>></i>
+                </button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in rows">
+            <td ng-repeat="month in row.months" class="text-center" style="width: 60px !important">
+                <button id="month_{{ $parent.$index *3 + $index + 1 }}" type="button" style="width:100%;" class="btn btn-default btn-sm" ng-click="selectMonth($parent.$index *3 + $index)">
+                    <span>{{ month }}</span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

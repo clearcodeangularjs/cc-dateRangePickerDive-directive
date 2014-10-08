@@ -1,0 +1,25 @@
+<div class="row">
+   <div infinite-scroll-distance="0"
+         infinite-scroll="loadMoreToGrid()"
+         infinite-scroll-disabled="loading"
+         class="posts-loading-area clearfix">
+
+        <div id="js-isotope">
+            <div id="postGrid_{{ $index + 1 }}" class="col-xs-4 isotope-item post-grid dataset{{ post.dataSetNumber }}"
+                 data-post="post"
+                 data-post-number="{{ $index + 1 }}"
+                 ng-repeat="post in posts"
+                 ng-hide="post.loading"
+                 post-box
+                 on-last-repeat="onRepeatLast()">
+            </div>
+        </div>
+        <div ng-if="!isStatic" class="row" ng-show="loading">
+            <div class="col-xs-12">
+                <div class="wrapper-loading-inline">
+                    <img src="images/loading-balls.svg" alt="Loading icon"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

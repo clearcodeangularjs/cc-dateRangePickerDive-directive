@@ -1,0 +1,16 @@
+<div>
+    <span ng-repeat="upload in uploads">
+        <div class="upload-box upload-box-full {{upload|imageOrIconClass}}" style="background: url({{ upload|imageOrIcon }});" ng-click="preview(upload)">
+            <a class="preview" href ng-click="preview(upload)"></a>
+            <i class="glyphicon glyphicon-remove upload-box-remove" ng-click="remove(upload)"></i>
+        </div>
+        <div class="info" ng-if="(upload|imageOrIconClass) == 'uploader-pdf'">
+            <i class="icon-info"></i> Will be opened in new window after click on pdf icon
+        </div>
+    </span>
+    <div class="upload-box upload-box-empty" ng-class="{ 'loading': loading }" ng-if="canAddMore()">
+        <i class="glyphicon glyphicon-picture" ng-hide="loading"></i>
+        <img class="upload-box-loading" src="images/loading-balls.svg" alt="Loading icon"/>
+    </div>
+    <input type="file" style="display: none;" ng-model="hiddenInput" />
+</div>

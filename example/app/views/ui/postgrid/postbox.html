@@ -1,0 +1,81 @@
+<div class="box" ng-class="{'is-open': isOpen }">
+    <section class="content content-social">
+        <div class="row space-bottom">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-3" ng-if="post.from_image">
+                        <img src="{{ post.from_image }}" />
+                    </div>
+                    <div class="col-lg-7">
+                        <strong>{{ post.from }}</strong><br />
+                        <div class="info">Posted On:  {{ post.publish_time | date : 'MM/dd/yyyy'}}</div>
+                        <a id="postGrid_{{ postNumber }}_Preview" target="_blank" href="{{ post.preview }}"><small>Preview</small></a>
+                    </div>
+                    <div class="col-lg-2" ng-if="post.type == 'facebook'">
+                        <i class="icon-facebook color-facebook pull-right" style="font-size: 40px"></i>
+                    </div>
+                    <div class="col-lg-2" ng-if="post.type == 'twitter'">
+                        <i class="icon-twitter color-twitter pull-right" style="font-size: 40px"></i>
+                    </div>
+                    <div class="col-lg-2" ng-if="post.type == 'google'">
+                        <i class="icon-gplus color-google pull-right" style="font-size: 40px"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row space-bottom" ng-if="post.image">
+            <div class="col-lg-12 image-container">
+                <img class="image-container-size" src="{{ post.image }}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 post-container" ng-bind-html="post.message | linky"></div>
+        </div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <a id="postGrid_{{ postNumber }}_OpenComments" ng-hide="isOpen" ng-click="toggleIsOpen()">({{ post.comments.length }}) Comments</a>
+                <a id="postGrid_{{ postNumber }}_HideComments" ng-show="isOpen" ng-click="toggleIsOpen()">Hide Comments</a>
+            </div>
+        </div>
+        <div class="row" ng-show="isOpen">
+            <div class="col-lg-12 comment-row" ng-repeat="comment in post.comments">
+                <div class="col-lg-3" ng-if="comment.from_image">
+                    <img src="{{ comment.from_image }}" />
+                </div>
+                <div class="col-lg-9">
+                    {{ comment.message }}
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer ng-show="isOpen" ng-controller="PostgridCommentCtrl">
+        <div class="row" ng-hide="isVisibleCommentForm">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <input id="postGrid_{{ postNumber }}_ShowCommentForm" type="text" class="form-control"  placeholder="Comment post" ng-focus="showCommentForm()" />
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="isVisibleCommentForm">
+            <div class="col-lg-12 body-loading">
+                <div class="wrapper-loading" ng-show="loading">
+                    <img src="images/loading-balls.svg" alt="Loading icon">
+                </div>
+                <div class="form-group">
+                    <label>Message:</label>
+                    <a href class="pull-right" ng-click="shortenLinks()" id="postGrid_{{ postNumber }}_ShortenLinks">
+                        <small><i class="icon-scissors"></i></small> Shorten links
+                    </a>
+                    <textarea zenmode class="form-control" ng-model="message" id="postGrid_{{ postNumber }}_CommentMessage"></textarea>
+                </div>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" ng-click="submit(post)" id="postGrid_{{ postNumber }}_PublishComment">Comment</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

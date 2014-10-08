@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label class="col-sm-{{ 12 - formColWidth }} control-label">{{ label }}</label>
+    <div class="col-sm-{{ formColWidth }}">
+        <select type="text" ng-model="model" class="form-control" id="inputEmail3">
+            <option ng-repeat="option in options" value="{{ option.value }}">
+                {{ option.label }}
+            </option>
+        </select>
+    </div>
+</div>
