@@ -1,5 +1,5 @@
 {
-	"name": "DateRangePickerDive",
+	"name": "cc-dateRangePickerDive-directive",
 	"description": "Fully customized date range picker with angular model",
 	"authors": [
 		"ClearCode (http://clearcode.cc)"
