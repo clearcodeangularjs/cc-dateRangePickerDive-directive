@@ -5,7 +5,7 @@ Adds range picker created with ng bootrstap.
 
 Installation
 --------------
-TODO
+``` bower install clearcodeangularjs/cc-dateRangePickerDive-directive --save ```
 
 
 Usage
